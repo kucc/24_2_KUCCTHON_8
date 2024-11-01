@@ -11,7 +11,7 @@ const User = () => {
     try {
       await navigator.clipboard.writeText(text);
       alert(
-        '클립보드에 링크가 복사되었어요.\n친구에게 링크를 보내 꾸며달라하세요!'
+        '클립보드에 링크가 복사되었어요.\n친구에게 링크를 보내 공유해보세요!'
       );
     } catch (err) {
       console.log(err);
@@ -26,17 +26,17 @@ const User = () => {
     <Background className='text-center'>
       <div className='flex flex-col justify-between'>
         <div className='p-8'>
-          <h1 className='text-white font-black text-3xl'>{`'${username}'의 우주`}</h1>
+          <h1 className='text-3xl font-black text-white'>{`'${username}'의 우주`}</h1>
         </div>
 
-        <CardBackground className='flex justify-between flex-wrap'>
+        <CardBackground className='flex flex-wrap justify-between'>
           {datas.length === 0 ? (
             <MaxWidthWrapper className='flex flex-col items-center justify-center text-center'>
               <div className='text-[#552990] text-xl font-bold mb-4'>
-                아직 친구의 우주가 없어요.
+                아직 내 우주가 없어요.
               </div>
               <div className='text-[#552990] text-xl font-bold '>
-                친구의 우주를 만들어주세요!
+                나의 우주를 만들어보세요!
               </div>
             </MaxWidthWrapper>
           ) : (
@@ -60,7 +60,7 @@ const User = () => {
         </CardBackground>
       </div>
 
-      <div className='flex flex-col  items-center'>
+      <div className='flex flex-col items-center'>
         <Link
           to={`/user/select/${username}${
             datas.length > 0 ? '?datas=' + base64Encoder(datas) : ''

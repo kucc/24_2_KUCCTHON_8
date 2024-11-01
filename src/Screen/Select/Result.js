@@ -32,7 +32,7 @@ const Result = ({ answers }) => {
         <div className='flex flex-col w-full'>
           <input
             className='p-4 mb-2 rounded-2xl'
-            placeholder='만든 사람의 이름을 입력해주세요'
+            placeholder='만든 친구의 이름을 입력해주세요'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></input>
