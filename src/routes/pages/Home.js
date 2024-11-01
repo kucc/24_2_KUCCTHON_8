@@ -14,21 +14,21 @@ const Home = () => {
         </p>
 
         <img
-          src='/images/stars/star.png'
+          src='./images/stars/star.png'
           className='rounded-full bg-[#E2DDFF] w-48 h-48 text-center '
           alt='the star'
         />
 
         <div className='flex flex-col '>
           <input
-            className='rounded-xl p-4 mb-2'
+            className='p-4 mb-2 rounded-xl'
             placeholder='이름을 입력해주세요'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></input>
 
           <button
-            className='rounded-full bg-slate-200 p-4 font-bold '
+            className='p-4 font-bold rounded-full bg-slate-200 '
             onClick={() => {
               if (name === '') {
                 alert('이름을 입력해주세요');
