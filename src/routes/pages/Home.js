@@ -14,7 +14,7 @@ const Home = () => {
         </p>
 
         <img
-          src='./images/stars/star.png'
+          src='images/stars/star.png'
           className='rounded-full bg-[#E2DDFF] w-48 h-48 text-center '
           alt='the star'
         />
