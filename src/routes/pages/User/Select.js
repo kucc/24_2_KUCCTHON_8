@@ -5,62 +5,53 @@ import Background from '../../../components/Background';
 
 const Questions = [
   {
-    question: '친구가 새로운 일을 시작할 때 보이는 모습은 어떤가요?',
+    question: '이 친구가 사람들과 어울릴 때 어떤 모습인가요?',
+    answers: ['나댄다', '진지충', '예민, 까칠', '풍부한 공감'],
+  },
+
+  {
+    question: '이 친구의 여가 스타일은?',
+    answers: ['운동', '자기만의 세계', '여유로운 휴식', '신중히 따져본다.'],
+  },
+
+  {
+    question: '이 친구가 스트레스를 받을 때 보이는 모습은?',
     answers: [
-      'A. 즉흥적으로 도전한다.',
-      'B. 철저히 계획한다.',
-      'C. 사람들과 함께 시작한다.',
-      'D. 신중히 따져본다.',
+      '긍정적인 마인드',
+      '혼자 생각함',
+      '드라마 정주행',
+      '친구들과 대화',
     ],
   },
 
   {
-    question: '친구가 새로운 일을 시작할 때 보이는 모습은 어떤가요?',
-    answers: [
-      'A. 즉흥적으로 도전한다.',
-      'B. 철저히 계획한다.',
-      'C. 사람들과 함께 시작한다.',
-      'D. 신중히 따져본다.',
-    ],
+    question: '이 친구의 일처리 방식은?',
+    answers: ['근자감', '직관적', '계획적', '융통성있게'],
   },
 
   {
-    question: '친구가 새로운 일을 시작할 때 보이는 모습은 어떤가요?',
-    answers: [
-      'A. 즉흥적으로 도전한다.',
-      'B. 철저히 계획한다.',
-      'C. 사람들과 함께 시작한다.',
-      'D. 신중히 따져본다.',
-    ],
-  },
-
-  {
-    question: '친구가 새로운 일을 시작할 때 보이는 모습은 어떤가요?',
-    answers: [
-      'A. 즉흥적으로 도전한다.',
-      'B. 철저히 계획한다.',
-      'C. 사람들과 함께 시작한다.',
-      'D. 신중히 따져본다.',
-    ],
+    question: '이 친구의 소셜미디어 이미지는?',
+    answers: ['인싸', '소셜미디어를 안함', '힙스터', '친근함'],
   },
 ];
 
 const Select = () => {
   const [step, setStep] = React.useState(1);
-  const [answers, setAnswers] = React.useState([]);
+  const [answers, setAnswers] = React.useState([0, 0, 0, 0]);
 
   const AddSelect = useCallback(
     (selected) => {
-      setAnswers([...answers, selected]);
-      console.log(answers);
+      setAnswers((prevArray) =>
+        prevArray.map((value, i) => (i === selected ? value + 1 : value))
+      );
       setStep(step + 1);
     },
-    [step, answers]
+    [step]
   );
 
   return (
     <Background>
-      {step >= 5 ? (
+      {step >= 6 ? (
         <Result answers={answers} />
       ) : (
         <Question

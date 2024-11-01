@@ -10,7 +10,7 @@ const Home = () => {
     <Background className='bg-[url("./assets/images/background.jpg")] bg-cover h-screen'>
       <div className='flex flex-col items-center justify-center h-full space-y-4'>
         <p className='text-[#F0FFAD] mb-10  text-3xl font-extrabold'>
-          친구의 별자리 찾아주기
+          나의 우주 채우기
         </p>
 
         <img

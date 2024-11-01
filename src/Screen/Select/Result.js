@@ -17,7 +17,7 @@ const Result = ({ answers }) => {
 
   return (
     <CardBackground>
-      <div className='flex flex-col w-full h-full justify-around items-center text-center'>
+      <div className='flex flex-col items-center justify-around w-full h-full text-center'>
         <div className='flex items-center justify-center rounded-full w-fit h-fit p-12  bg-[#6C61E9]  border-black border-2'>
           <img
             className='w-40 h-40'
@@ -25,13 +25,13 @@ const Result = ({ answers }) => {
             alt={character.star}
           />
         </div>
-        <div className='rounded-full px-12 py-3 bg-[#6C61E9] font-black text-xl'>
+        <div className='rounded-full px-12 py-3 bg-[#6C61E9] font-black text-xl border-black border-2'>
           {`${character.star} 자리`}
         </div>
 
         <div className='flex flex-col w-full'>
           <input
-            className='rounded-2xl p-4 mb-2'
+            className='p-4 mb-2 rounded-2xl'
             placeholder='만든 사람의 이름을 입력해주세요'
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -49,8 +49,16 @@ const Result = ({ answers }) => {
               }
             }}
           >
-            친구 우주에 추가하기
+            내 우주에 추가하기
           </button>
+          <a
+            href={character.link}
+            target='_blank'
+            rel='noreferrer'
+            className='mt-4 font-bold'
+          >
+            자세히 보기
+          </a>
         </div>
       </div>
     </CardBackground>
